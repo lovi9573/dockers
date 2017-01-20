@@ -40,6 +40,8 @@ RUN conda install -y seaborn pillow pyyaml hdf5
 
 RUN pip install --upgrade pip
 
+RUN pip install wordcloud
+
 ############################################################################## 
 # Tensorflow 
 ############################################################################## 
