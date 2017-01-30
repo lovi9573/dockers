@@ -38,7 +38,7 @@ RUN echo "import sys\n\
 sys.setdefaultencoding('utf-8')" >> /opt/conda/lib/python2.7/sitecustomize.py
 
 #Follow up with keras and other desired packages not included in anaconda by default
-RUN conda install -y seaborn pillow pyyaml hdf5
+RUN conda install -y seaborn pillow pyyaml hdf5 lmdb
 
 RUN pip install --upgrade pip
 
