@@ -13,6 +13,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
         python \
         python-dev \
         rsync \
+	liblmdb-dev \
         software-properties-common \
         unzip \
         && \
