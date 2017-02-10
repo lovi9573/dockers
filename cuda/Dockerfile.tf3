@@ -29,16 +29,16 @@ RUN apt-get -y update && \
 # anaconda python 
 ############################################################################## 
 # Install Anaconda 
-RUN wget --quiet https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh && \
- /bin/bash Anaconda2-4.2.0-Linux-x86_64.sh -b -p /opt/conda && \
- rm Anaconda2-4.2.0-Linux-x86_64.sh
+RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh && \
+ /bin/bash Anaconda3-4.3.0-Linux-x86_64.sh -b -p /opt/conda && \
+ rm Anaconda3-4.3.0-Linux-x86_64.sh
 
 ENV PATH /opt/conda/bin:$PATH
 
 # change default encoding
 RUN echo "\n \ 
 	  import sys\n \
-          sys.setdefaultencoding('utf-8')" >> /opt/conda/lib/python2.7/sitecustomize.py
+          sys.setdefaultencoding('utf-8')" >> /opt/conda/lib/python3.6/sitecustomize.py
 
 #Follow up with keras and other desired packages not included in anaconda by default
 RUN conda install -y seaborn pillow pyyaml hdf5 lz4 
@@ -51,9 +51,7 @@ RUN pip install --upgrade pip
 ############################################################################## 
 # Install TensorFlow GPU version.
 RUN pip --no-cache-dir install \
-  https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.0rc0-cp27-none-linux_x86_64.whl
-
-
+	https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-0.12.1-cp35-cp35m-linux_x86_64.whl
 ############################################################################## 
 # keras 
 ############################################################################## 
