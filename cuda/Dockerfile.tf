@@ -57,7 +57,7 @@ RUN pip --no-cache-dir install \
 ############################################################################## 
 # keras 
 ############################################################################## 
-RUN pip install keras
+RUN pip install keras cbor msgpack msgpack-numpy
 
 # IPython
 EXPOSE 8888
