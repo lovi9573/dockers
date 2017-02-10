@@ -29,9 +29,9 @@ RUN apt-get -y update && \
 # anaconda python 
 ############################################################################## 
 # Install Anaconda 
-RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-4.3.0-Linux-x86_64.sh && \
- /bin/bash Anaconda3-4.3.0-Linux-x86_64.sh -b -p /opt/conda && \
- rm Anaconda3-4.3.0-Linux-x86_64.sh
+RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh && \
+ /bin/bash Anaconda3-4.1.1-Linux-x86_64.sh -b -p /opt/conda && \
+ rm Anaconda3-4.1.1-Linux-x86_64.sh
 
 ENV PATH /opt/conda/bin:$PATH
 
