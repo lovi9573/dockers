@@ -60,11 +60,9 @@ RUN pip install keras
 ##############################################################################
 RUN python -m nltk.downloader book
 
-# TensorBoard
-EXPOSE 6006
 # IPython
 EXPOSE 8888
 
 WORKDIR "/notebooks"
 
-CMD jupyter notebook --no-browser --ip=0.0.0.0 & tensorboard --logdir=/logs --host 0.0.0.0
+CMD jupyter notebook --no-browser --ip=0.0.0.0 
