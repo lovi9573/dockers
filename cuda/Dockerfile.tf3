@@ -16,6 +16,7 @@ RUN apt-get -y update && \
         rsync \
 	liblmdb-dev \
 	liblmdb0 \
+	libxext6 \
         software-properties-common \
         unzip \
 	wget \
