@@ -16,6 +16,7 @@ RUN apt-get -y update && \
         rsync \
 	liblmdb-dev \
 	liblmdb0 \
+	libxext6 \
         software-properties-common \
         unzip \
 	wget \
@@ -34,11 +35,6 @@ RUN wget --quiet https://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.
  rm Anaconda3-4.1.1-Linux-x86_64.sh
 
 ENV PATH /opt/conda/bin:$PATH
-
-# change default encoding
-#RUN echo "\n \ 
-#	  import sys\n \
-#          sys.setdefaultencoding('utf-8')" >> /opt/conda/lib/python3.5/sitecustomize.py
 
 #Follow up with keras and other desired packages not included in anaconda by default
 RUN conda install -y seaborn pillow pyyaml hdf5 lz4 
