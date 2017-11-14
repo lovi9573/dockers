@@ -1,0 +1,10 @@
+FROM nvcr.io/nvidia/tensorflow:17.10
+
+RUN pip install jupyter
+
+# IPython
+EXPOSE 8888
+
+WORKDIR "/notebooks"
+
+CMD jupyter notebook --no-browser --ip=0.0.0.0 --allow-root
